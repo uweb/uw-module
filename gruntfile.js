@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: [ 'js/admin.uw-slideshow.dev.js' ],
-        dest: 'js/admin.uw-slideshow.js'
+        src: [ 'js/admin.uw-module.dev.js' ],
+        dest: 'js/admin.uw-module.js'
       }
     },
     uglify: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'js/admin.uw-slideshow.js': ['<%= concat.dist.dest %>']
+          'js/admin.uw-module.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -51,12 +51,14 @@ module.exports = function(grunt) {
 		        cleancss: true
 			},
 			files: {
-				'css/admin.uw-slideshow.css': 'less/admin.uw-slideshow.less'
+				'css/admin.uw-module.css': 'less/admin.uw-module.less',
+        'css/uw-module.css'      : 'less/uw-module.less'
 			}
 		},
 		development: {
 			files: {
-				'css/admin.uw-slideshow.dev.css': 'less/admin.uw-slideshow.less'
+				'css/admin.uw-module.dev.css': 'less/admin.uw-module.less',
+        'css/uw-module.dev.css'      : 'less/uw-module.less'
 			}
 		}
 	},
