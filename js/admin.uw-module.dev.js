@@ -84,7 +84,7 @@ ModularPages.View = Backbone.View.extend({
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Basic white </h1>' +
         '<div class="form">' +
-          '<p>Text  : <br/><textarea type="text" class="mceEditor" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
+          '<p>Text  : <br/><textarea id="arugula" type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
@@ -173,6 +173,7 @@ ModularPages.View = Backbone.View.extend({
   {
     this.$el.find('.module').remove()
     _.each( this.collection.models, this.addmoduleBox )
+    tinyMCE.execCommand('mceAddControl', false, 'arugula'); 
   },
 
   addmoduleBox : function( module, index )

@@ -75,8 +75,9 @@
   padding-right: 15px;
 }
 .uw-module-body div.give-module {
-  margin-right: 25px;
-  margin-left: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
   margin-bottom: 20px;
 }
 .uw-module-body div.give-module div.giving-frame {
@@ -85,12 +86,20 @@
 }
 .uw-module-body div.give-module div.giving-mod-how-to {
   display: inline-block;
+  max-width: 550px;
 }
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1024px) {
   .uw-module-body div.give-module div.giving-mod-how-to {
     position: absolute;
     margin-top: 35px;
-    margin-left: 10px;
+    margin-left: 25px;
     margin-right: 25px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .uw-module-body div.give-module {
+    margin-right: auto;
+    margin-left: auto;
+    width: 660px;
   }
 }

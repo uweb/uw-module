@@ -74,18 +74,6 @@
 			    color: #fff;
 			    text-align: center;
 			}
-			// &:after {
-	  		//		content: "";
-			//     display: block;
-			//     position: absolute;
-			//     top: 0;
-			//     height: 360px;
-			//     left: -360px;
-			//     opacity: .3;
-			//     width: 580px;
-			//     background: url(../assets/slashes-light.svg) no-repeat 0 -2032px;
-			//     z-index: 0;
-		 //    }
   		}
 	}
 
@@ -104,8 +92,9 @@
 	}
 
 	div.give-module{
-		margin-right: 25px;
-		margin-left: 25px;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 1200px;
 		margin-bottom: 20px;
 		div.giving-frame{
 			width: 660px;
@@ -113,12 +102,18 @@
 		}
 		div.giving-mod-how-to{
 			display:inline-block;
-			@media only screen and (min-width : 1080px) { 
+			max-width: 550px;
+			@media only screen and (min-width : 1024px) { 
 				position: absolute;
 				margin-top: 35px;
-    			margin-left: 10px;
+    			margin-left: 25px;
     			margin-right: 25px;
 			}
+		}
+		@media only screen and (max-width : 1023px) {
+			margin-right: auto;
+			margin-left: auto;
+			width: 660px;
 		}
 	}
 
