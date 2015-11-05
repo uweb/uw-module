@@ -36,10 +36,11 @@
   margin-top: 60px;
   position: relative;
 }
-.uw-module-body div.full-module div.container #full-module-blurb {
+.uw-module-body div.full-module div.container #full-module-blurb,
+.uw-module-body div.full-module div.container p {
   margin: 40px 0 300px;
   width: 85%;
-  color: #fff;
+  color: #FFF;
   font-size: 17px;
   line-height: 1.72222;
   font-weight: 400;
