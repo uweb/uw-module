@@ -16,7 +16,7 @@ class UW_Module
   const META_BOX_TITLE   = 'Modules';
   const MODULE_WHITE     = '<div class="white-module module-%s"><div class="mod-text">%s</div></div>';
   const MODULE_FULL      = '<div class="full-module module-%s" style="background-image: url(%s);"><img src="%s" style="visibility:hidden"/><div id="full-module-head" class="container"><h1 class="uw-site-title">%s</h1><span class="udub-slant"><span></span></span><div id="full-module-blurb">%s</div></div></div>';
-  const MODULE_BASIC     = '<div class="basic-module module-%s" style="background-image: url(%s);"><div id="basic-mod-container" class="container"><div class="mod-text">%s</div></div></div>';
+  const MODULE_BASIC     = '<a href="%s"><div class="basic-module module-%s" style="background-image: url(%s);"><div id="basic-mod-container" class="container"><div class="mod-text"><h2>%s</h2><p>%s</p></div></div></div></a>';
   const MODULE_THIN      = '<div class="thin-module module-%s"><div class="mod-text">%s</div></div>';
   const MODULE_GIVE      = '<div class="give-module module-%s"><div class="giving-frame">[iframe src="https://online.gifts.washington.edu/secure/?source_typ=3&source=%s" width="660" height="743"]</div><div class="giving-mod-how-to"><h3>How to use</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur erat a nunc tristique, eu dignissim mauris gravida. Quisque non imperdiet elit. Sed interdum accumsan sem vitae dignissim. Etiam mattis non lacus ut posuere. Suspendisse sagittis nunc consequat orci semper, id interdum ligula luctus. Donec sollicitudin non leo vel feugiat. Etiam porttitor viverra suscipit.</p><br/><p>Proin porta massa mauris, eget tincidunt nisl sagittis ac. Donec vitae sapien dui. Vivamus posuere eros eros. Morbi dapibus hendrerit lorem, et varius ipsum egestas id. Quisque eu sodales nunc. Donec placerat vitae lacus sed sollicitudin. Nullam at suscipit libero, et varius turpis. Morbi urna nunc, maximus nec est sed, fringilla imperdiet nunc. Cras vulputate consequat laoreet. Aliquam at laoreet neque, sit amet auctor arcu.</p></div></div>';
 
@@ -201,7 +201,7 @@ class UW_Module
         return sprintf(self::MODULE_FULL, $module->id, $module->image, $module->image, $module->title, do_shortcode($module->text));
         break;
       case "basic":
-        return sprintf(self::MODULE_BASIC, $module->id, $module->image, do_shortcode($module->text));
+        return sprintf(self::MODULE_BASIC, $module->link, $module->id, $module->image, $module->title, do_shortcode($module->text));
         break;
       case "thin":
         return sprintf(self::MODULE_THIN, $module->id, do_shortcode($module->text));

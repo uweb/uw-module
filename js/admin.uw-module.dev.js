@@ -123,7 +123,9 @@ ModularPages.View = Backbone.View.extend({
           '<input type="hidden" name="modules[<%= id %>][mobileimage]" value="<%= mobileimage %>"/>' +
         '</div>' +
         '<div class="form">' +
+          '<p>Title : <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" /></p>' +
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
+          '<p>Link  (optional):<input type="text" name="modules[<%= id %>][link]" value="<%- link %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
@@ -173,7 +175,6 @@ ModularPages.View = Backbone.View.extend({
   {
     this.$el.find('.module').remove()
     _.each( this.collection.models, this.addmoduleBox )
-    tinyMCE.execCommand('mceAddControl', false, 'arugula'); 
   },
 
   addmoduleBox : function( module, index )
