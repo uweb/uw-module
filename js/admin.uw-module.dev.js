@@ -9,8 +9,8 @@ ModularPages.Module = Backbone.Model.extend({
       link  : null,
       dark : null,
       template: 'white',
-      image : '/wp-content/plugins/uw-modules/assets/placeholder.png',
-      mobileimage : '/wp-content/plugins/uw-modules/assets/placeholder-mobile.png'
+      image : '/wp-content/plugins/uw-module/assets/placeholder.png',
+      mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png'
   },
 
 })
