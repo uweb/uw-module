@@ -38,6 +38,7 @@
 }
 .uw-module-body div.full-module div.container #full-module-blurb {
   margin: 40px 0 300px;
+  max-width: 600px;
   width: 85%;
 }
 .uw-module-body div.full-module div.container #full-module-blurb,
