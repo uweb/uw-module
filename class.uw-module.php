@@ -120,12 +120,12 @@ class UW_Module
 
   function add_shortcode_column( $columns )
   {
-    return array_merge( array_slice( $columns, 0, 2 ), array('shortcode'=>'Shortcode'), array_slice( $columns, 2, null ));
+    return array_merge( array_slice( $columns, 0, 2 ), array('module-shortcode'=>'Module Shortcode'), array_slice( $columns, 2, null ));
   }
 
   function add_shortcode_column_content( $column, $post_id )
   {
-    if ( $column == 'shortcode' ) echo '[module id='. $post_id .']';
+    if ( $column == 'module-shortcode' ) echo '[module id='. $post_id .']';
   }
 
   function shortcode( $atts )
