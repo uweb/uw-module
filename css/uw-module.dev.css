@@ -72,6 +72,13 @@
   transform: skew(15deg, 0);
   color: #fff;
 }
+.uw-module-body div.basic-module[onclick] {
+  cursor: pointer;
+}
+.uw-module-body div.basic-module[onclick]:hover #basic-mod-container div.mod-text h2,
+.uw-module-body div.basic-module[onclick]:focus #basic-mod-container div.mod-text h2 {
+  color: #b7a57a;
+}
 .uw-module-body div.thin-module {
   height: 150px;
   padding-top: 20px;
