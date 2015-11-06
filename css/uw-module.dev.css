@@ -105,9 +105,6 @@
   .uw-module-body div.basic-module #basic-mod-container div.mod-text {
     width: 100%;
   }
-  .uw-module-body div.basic-module #basic-mod-container div.mod-text h2 {
-    padding-left: 80px;
-  }
 }
 .uw-module-body div.basic-module[onclick] {
   cursor: pointer;
