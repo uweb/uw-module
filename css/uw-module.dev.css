@@ -18,6 +18,17 @@
   color: rgba(0, 0, 0, 0.7);
   font-size: 40px;
 }
+@media only screen and (max-width: 768px) {
+  .uw-module-body div.white-module {
+    padding-top: 20px;
+  }
+  .uw-module-body div.white-module div.mod-text {
+    width: 90%;
+  }
+  .uw-module-body div.white-module div.mod-text h2 {
+    margin-top: 0;
+  }
+}
 .uw-module-body div.full-module {
   height: inherit !important;
   background-size: cover;
@@ -94,9 +105,8 @@
   .uw-module-body div.basic-module #basic-mod-container div.mod-text {
     width: 100%;
   }
-  .uw-module-body div.basic-module #basic-mod-container div.mod-text p,
   .uw-module-body div.basic-module #basic-mod-container div.mod-text h2 {
-    padding-left: 70px;
+    padding-left: 80px;
   }
 }
 .uw-module-body div.basic-module[onclick] {
