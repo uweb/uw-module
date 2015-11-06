@@ -2,6 +2,7 @@
   margin-bottom: 0;
 }
 .uw-module-body div.white-module {
+  min-height: 150px;
   padding-top: 60px;
   padding-bottom: 20px;
 }
@@ -11,6 +12,11 @@
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+.uw-module-body div.white-module div.mod-text h2 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 40px;
 }
 .uw-module-body div.full-module {
   height: inherit !important;
@@ -95,25 +101,6 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   font-size: 40px;
-}
-.uw-module-body div.thin-module:before {
-  position: absolute;
-  left: 0;
-  height: 40px;
-  width: 100%;
-  content: "";
-  opacity: .4;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(rgba(0, 0, 0, 0.6))) 0 0 no-repeat;
-  transform: translateY(90px);
-}
-.uw-module-body div.thin-module:after {
-  position: absolute;
-  height: 40px;
-  width: 100%;
-  content: "";
-  background: url(../assets/stripes-dark-tile.svg);
-  opacity: .2;
-  transform: translateY(-10px);
 }
 .uw-module-body div.give-module {
   margin-right: auto;
