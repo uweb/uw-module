@@ -19,9 +19,6 @@
   font-size: 40px;
 }
 @media only screen and (max-width: 768px) {
-  .uw-module-body div.white-module {
-    padding-top: 20px;
-  }
   .uw-module-body div.white-module div.mod-text {
     width: 90%;
   }
