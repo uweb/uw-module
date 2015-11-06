@@ -120,6 +120,25 @@
 		    	font-size: 40px;
 		    }
 		}
+		&:before {
+			position: absolute;
+		    left: 0;
+		    height: 40px;
+		    width: 100%;
+		    content: "";
+		    opacity: .4;
+		    background: -webkit-gradient(linear,0 0,0 100%,from(transparent),to(rgba(0,0,0,.6))) 0 0 no-repeat;
+		    transform: translateY(90px);
+		}
+		&:after{
+		    position: absolute;
+		    height: 40px;
+		    width: 100%;
+		    content: "";
+		    background: url(../assets/stripes-dark-tile.svg);
+		    opacity: .2;
+		    transform: translateY(-10px);
+		}
 	}
 
 	div.give-module{

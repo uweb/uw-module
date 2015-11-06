@@ -96,6 +96,25 @@
   color: rgba(0, 0, 0, 0.7);
   font-size: 40px;
 }
+.uw-module-body div.thin-module:before {
+  position: absolute;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  content: "";
+  opacity: .4;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(rgba(0, 0, 0, 0.6))) 0 0 no-repeat;
+  transform: translateY(90px);
+}
+.uw-module-body div.thin-module:after {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  content: "";
+  background: url(../assets/stripes-dark-tile.svg);
+  opacity: .2;
+  transform: translateY(-10px);
+}
 .uw-module-body div.give-module {
   margin-right: auto;
   margin-left: auto;
