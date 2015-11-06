@@ -94,6 +94,10 @@
   .uw-module-body div.basic-module #basic-mod-container div.mod-text {
     width: 100%;
   }
+  .uw-module-body div.basic-module #basic-mod-container div.mod-text p,
+  .uw-module-body div.basic-module #basic-mod-container div.mod-text h2 {
+    padding-left: 70px;
+  }
 }
 .uw-module-body div.basic-module[onclick] {
   cursor: pointer;
