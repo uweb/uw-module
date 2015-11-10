@@ -10,7 +10,8 @@ ModularPages.Module = Backbone.Model.extend({
       dark : null,
       template: 'white',
       image : '/wp-content/plugins/uw-module/assets/placeholder.png',
-      mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png'
+      mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png',
+      side : 'left'
   },
 
 })
@@ -126,6 +127,7 @@ ModularPages.View = Backbone.View.extend({
           '<p>Title : <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" /></p>' +
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
           '<p>Link  (optional):<input type="text" name="modules[<%= id %>][link]" value="<%- link %>" /></p>' +
+          '<p>Move text to the right side? <input type="checkbox" name="modules[<%= id %>][side]" value="right" style="width:auto" $s ></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
@@ -180,6 +182,7 @@ ModularPages.View = Backbone.View.extend({
 
   addmoduleBox : function( module, index )
   {
+    console.log(module.attributes)
     switch ( module.attributes.template ){
       case "white":
         this.$el.append( _.template( this.templatewhite, module.toJSON() ) );
@@ -188,7 +191,13 @@ ModularPages.View = Backbone.View.extend({
         this.$el.append( _.template( this.templatefull, module.toJSON() ) );
         break;
       case "basic":
-        this.$el.append( _.template( this.templatebasic, module.toJSON() ) );
+        var basic = this.templatebasic;
+        if (module.attributes.side == "right"){
+          basic = basic.replace('$s' , "checked");
+        } else {
+          basic = basic.replace('$s' , "");
+        }
+        this.$el.append( _.template( basic, module.toJSON() ) );
         break;
       case "thin":
         this.$el.append( _.template( this.templatethin, module.toJSON() ) );
