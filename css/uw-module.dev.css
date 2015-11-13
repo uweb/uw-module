@@ -58,7 +58,7 @@
   background-size: cover;
   background-position: center center;
 }
-.uw-module-body div.full-module img {
+.uw-module-body div.full-module img.full-image-sizer {
   height: 0;
 }
 .uw-module-body div.full-module div.container {
@@ -101,6 +101,23 @@
 @media only screen and (max-width: 768px) {
   .uw-module-body div.full-module div.container .full-module-blurb {
     margin-bottom: 100px;
+  }
+}
+.uw-module-body div.full-module.mobile-overlay {
+  background-position: left center;
+  position: relative;
+}
+.uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
+  visibility: visible !important;
+}
+@media only screen and (max-width: 1024px) {
+  .uw-module-body div.full-module.mobile-overlay div.full-module-blurb {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
+    visibility: hidden !important;
   }
 }
 .uw-module-body div.basic-module {
@@ -165,6 +182,25 @@
 @media only screen and (max-width: 768px) {
   .uw-module-body div.basic-module .basic-mod-container.side-right div.mod-text-container div.mod-text {
     padding-right: 50px;
+  }
+}
+.uw-module-body div.basic-module.mobile-overlay {
+  background-position: left center;
+  position: relative;
+}
+.uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
+  visibility: visible !important;
+  right: 0;
+  bottom: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .uw-module-body div.basic-module.mobile-overlay div.full-module-blurb {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
+    visibility: hidden !important;
   }
 }
 .uw-module-body div.basic-module[onclick] {

@@ -61,7 +61,7 @@
 		height: inherit !important;
 		background-size:cover;
 		background-position: center center;
-		img {
+		img.full-image-sizer {
 			height: 0;
 		}
 		div.container{
@@ -104,6 +104,23 @@
 				}
 			}
 		}
+		&.mobile-overlay{
+			background-position: left center;
+			position: relative;
+			img.mobile-overlay{
+				visibility: visible !important;
+			}
+			 @media only screen and (max-width : 1024px){
+				div.full-module-blurb {
+					width: 60%;
+				} 
+			 }
+			 @media only screen and (max-width : 768px){
+				img.mobile-overlay{
+					visibility: hidden !important;
+				}
+			 }
+		}
 	}
 
 	//Basic Image
@@ -111,6 +128,7 @@
 		min-height:450px;
 		background-size: cover;
 		background-position: center center;
+
 		.basic-mod-container {
   			padding-top: 60px;
 			padding-bottom: 20px;
@@ -163,6 +181,25 @@
 				}
 			}
   		}
+  		&.mobile-overlay{
+			background-position: left center;
+			position: relative;
+			img.mobile-overlay{
+				visibility: visible !important;
+				right: 0;
+				bottom: 0;
+			}
+			 @media only screen and (max-width : 1024px){
+				div.full-module-blurb {
+					width: 60%;
+				} 
+			 }
+			 @media only screen and (max-width : 768px){
+				img.mobile-overlay{
+					visibility: hidden !important;
+				}
+			 }
+		}
 	}
 	div.basic-module[onclick] {
 		cursor: pointer;

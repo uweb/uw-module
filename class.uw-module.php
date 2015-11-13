@@ -15,8 +15,8 @@ class UW_Module
   const POST_TYPE_PLURAL = 'Modules';
   const META_BOX_TITLE   = 'Modules';
   const MODULE_WHITE     = '<div class="module white-module module-%s"><div class="mod-text">%s</div></div>';
-  const MODULE_FULL      = '<div class="module full-module module-%s" style="background-image: url(%s);"><img src="%s" style="visibility:hidden"/><div class="full-module-head container"><h1 class="uw-site-title">%s</h1><span class="udub-slant"><span></span></span><div class="full-module-blurb">%s</div></div></div>';
-  const MODULE_BASIC     = '<div class="module basic-module module-%s" style="background-image: url(%s);"><div class="basic-mod-container container side-%s"><div class="mod-text-container"><div class="mod-text"><h2>%s</h2><p>%s</p></div></div></div></div>';
+  const MODULE_FULL      = '<div class="module full-module module-%s" style="background-image: url(%s);"><img class="full-image-sizer" src="%s" style="visibility:hidden"/><img class="mobile-overlay" src="%s" style="visibility:hidden; position:absolute; %s"/><div class="full-module-head container"><h1 class="uw-site-title">%s</h1><span class="udub-slant"><span></span></span><div class="full-module-blurb">%s</div></div></div>';
+  const MODULE_BASIC     = '<div class="module basic-module module-%s" style="background-image: url(%s);"><img class="mobile-overlay" src="%s" style="visibility:hidden; position:absolute; %s"/><div class="basic-mod-container container side-%s"><div class="mod-text-container"><div class="mod-text"><h2>%s</h2><p>%s</p></div></div></div></div>';
   const MODULE_THIN      = '<div class="module thin-module module-%s"><div class="mod-text">%s</div></div>';
   const MODULE_GIVE      = '<div class="module give-module module-%s"><div class="mod-give-wrapper"><div class="mod-give-container"><div class="giving-frame">[iframe src="https://online.gifts.washington.edu/secure/?%sframe_buster=false"]</div><div class="giving-mod-how-to"><h3>Explore giving opportunities</h3><p><ul><li class="p1"><span class="s2">Not sure where to give? Check out the <b>Greatest Need </b>tab and support the areas that need you most.</span></li><li class="p1"><span class="s2">Looking for a particular fund in a college, school or department? Click on the <b>Search</b> tab, type in any key word and click <b>Go!</b></span></li><li class="p1"><span class="s2">Renewing your gift? Thank you! Log in to see your <b>Gift History </b>and support your favorites.</span></li><li class="p1"><span class="s2">Having trouble? Contact us at <a href="mailto:give2uw@uw.edu"><span class="s3">give2uw@uw.edu</span></a> or at 1-800-326-7566 or 206-685-1980. We are here to help!</span></li></ul></p></div></div></div></div>';
 
@@ -198,11 +198,13 @@ class UW_Module
         return sprintf(self::MODULE_WHITE, $module->id, do_shortcode($module->text));
         break;
       case "full":
-        return sprintf(self::MODULE_FULL, $module->id, $module->image, $module->image, $module->title, do_shortcode($module->text));
+        $overlay = isset($module->overlay) ? 'mobile-overlay' : '';
+        return sprintf(self::MODULE_FULL, $module->id . ' ' . $overlay, $module->image, $module->image, $module->mobileimage, $module->location, $module->title, do_shortcode($module->text));
         break;
       case "basic":
         $side = isset($module->side) ? $module->side : 'left';
-        $return = sprintf(self::MODULE_BASIC, $module->id, $module->image, $side, $module->title, do_shortcode($module->text));
+        $overlay = isset($module->overlay) ? 'mobile-overlay' : '';
+        $return = sprintf(self::MODULE_BASIC, $module->id . ' ' . $overlay, $module->image, $module->mobileimage, $module->location, $side, $module->title, do_shortcode($module->text));
         if (!empty($module->link)){
           $return .= "<script> $('div.module-" . $module->id . "').attr('onclick','location.href=\'" . $module->link . "\''); $('div.module-" . $module->id . "').attr('tabIndex', '0');</script>";
         }

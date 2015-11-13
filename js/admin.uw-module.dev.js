@@ -11,7 +11,9 @@ ModularPages.Module = Backbone.Model.extend({
       template: 'white',
       image : '/wp-content/plugins/uw-module/assets/placeholder.png',
       mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png',
-      side : 'left'
+      side : 'left',
+      overlay : 'no',
+      location : 'right:0; bottom:0;'
   },
 
 })
@@ -106,6 +108,8 @@ ModularPages.View = Backbone.View.extend({
         '<div class="form">' +
           '<p>Title : <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" /></p>' +
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
+          '<p>Use Mobile Image as overlay? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
+          '<p>Location of overlay (Defaults to right:0; bottom:0;) : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
@@ -127,7 +131,9 @@ ModularPages.View = Backbone.View.extend({
           '<p>Title : <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" /></p>' +
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
           '<p>Link  (optional):<input type="text" name="modules[<%= id %>][link]" value="<%- link %>" /></p>' +
-          '<p>Move text to the right side? <input type="checkbox" name="modules[<%= id %>][side]" value="right" style="width:auto" $s ></p>' +
+          '<p>Move text to the right side? <input type="checkbox" name="modules[<%= id %>][side]" value="right" style="width:auto" $s ><br/>' +
+          'Use Mobile Image as overlay? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
+          '<p>Location of overlay (Leave empty if none) : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
@@ -188,15 +194,14 @@ ModularPages.View = Backbone.View.extend({
         this.$el.append( _.template( this.templatewhite, module.toJSON() ) );
         break;
       case "full":
-        this.$el.append( _.template( this.templatefull, module.toJSON() ) );
+        var full = this.templatefull;
+        full = (module.attributes.overlay == "yes") ? full.replace('$t' , "checked") : full.replace('$t' , "");
+        this.$el.append( _.template( full, module.toJSON() ) );
         break;
       case "basic":
         var basic = this.templatebasic;
-        if (module.attributes.side == "right"){
-          basic = basic.replace('$s' , "checked");
-        } else {
-          basic = basic.replace('$s' , "");
-        }
+        basic = (module.attributes.side == "right") ? basic.replace('$s' , "checked") : basic.replace('$s' , "");
+        basic = (module.attributes.overlay == "yes") ? basic.replace('$t' , "checked") : basic.replace('$t' , "");
         this.$el.append( _.template( basic, module.toJSON() ) );
         break;
       case "thin":
