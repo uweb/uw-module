@@ -241,6 +241,16 @@
   .uw-module-body div.basic-module div.mobile-image {
     visibility: visible;
   }
+  .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
+    position: absolute;
+  }
+  .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text p {
+    width: 100%;
+    padding-right: 0;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 20px;
+  }
   .uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
   }
