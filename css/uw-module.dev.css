@@ -218,6 +218,7 @@
   }
   .uw-module-body div.give-module div.mod-give-wrapper div.mod-give-container div.giving-frame iframe {
     width: 660px;
+    height: 743px;
   }
   .uw-module-body div.give-module div.mod-give-wrapper div.mod-give-container div.giving-mod-how-to {
     display: inline-block;
@@ -265,6 +266,7 @@
   }
   .uw-module-body div.give-module div.giving-frame iframe {
     width: 660px;
+    height: 743px;
     margin-top: 9px;
   }
   .uw-module-body div.give-module div.giving-mod-how-to {
@@ -302,17 +304,9 @@
 @media only screen and (max-width: 659px) {
   .uw-module-body div.give-module div.giving-frame {
     width: 90%;
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 100%;
-    padding-top: 30px;
   }
   .uw-module-body div.give-module div.giving-frame iframe {
     width: 100%;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
+    height: 520px;
   }
 }
