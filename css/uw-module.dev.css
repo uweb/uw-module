@@ -3,7 +3,7 @@
 }
 .uw-module-body div.white-module {
   min-height: 150px;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .uw-module-body div.white-module div.mod-text {
@@ -299,7 +299,7 @@
     position: absolute;
     width: 1200px;
     z-index: 1;
-    margin-top: 30px;
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -309,6 +309,7 @@
   .uw-module-body div.give-module div.mod-give-wrapper div.mod-give-container div.giving-frame iframe {
     width: 660px;
     height: 743px;
+    margin-top: 20px;
   }
   .uw-module-body div.give-module div.mod-give-wrapper div.mod-give-container div.giving-mod-how-to {
     display: inline-block;
@@ -337,6 +338,9 @@
     width: 100%;
     content: "";
     background-color: #33006f;
+  }
+  .uw-module-body div.give-module:after {
+    transform: translateY(-40px);
   }
 }
 @media only screen and (max-width: 1199px) {
