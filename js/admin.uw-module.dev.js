@@ -133,7 +133,7 @@ ModularPages.View = Backbone.View.extend({
           '<p>Link  (optional):<input type="text" name="modules[<%= id %>][link]" value="<%- link %>" /></p>' +
           '<p>Move text to the right side? <input type="checkbox" name="modules[<%= id %>][side]" value="right" style="width:auto" $s ><br/>' +
           'Use Mobile Image as overlay? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
-          '<p>Location of overlay (Leave empty if none) : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
+          '<p>Location of overlay (Defaults to "right:0; bottom:0;") : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
