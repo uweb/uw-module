@@ -61,6 +61,16 @@
 .uw-module-body div.full-module img.full-image-sizer {
   height: 0;
 }
+.uw-module-body div.full-module div.mobile-image {
+  visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: right bottom;
+  top: 0;
+  z-index: 0;
+}
 .uw-module-body div.full-module div.container {
   top: 50px;
   left: 175px;
@@ -86,22 +96,34 @@
 }
 .uw-module-body div.full-module div.container .full-module-blurb {
   margin: 40px 0 300px;
-  max-width: 600px;
-  width: 85%;
+  z-index: 1;
+  height: 80px;
 }
 .uw-module-body div.full-module div.container .full-module-blurb,
 .uw-module-body div.full-module div.container .full-module-blurb p {
   color: #FFF;
+  width: 85%;
+  max-width: 600px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   font-size: 19px;
   line-height: 28px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
+.uw-module-body div.full-module div.container .full-module-blurb p {
+  position: absolute;
+  height: 100%;
+}
 @media only screen and (max-width: 768px) {
   .uw-module-body div.full-module div.container .full-module-blurb {
     margin-bottom: 100px;
+  }
+  .uw-module-body div.full-module div.container .full-module-blurb p {
     width: 95%;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 20px;
   }
 }
 .uw-module-body div.full-module.mobile-overlay {
@@ -117,6 +139,9 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .uw-module-body div.full-module div.mobile-image {
+    visibility: visible;
+  }
   .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
   }
@@ -128,6 +153,16 @@
   min-height: 450px;
   background-size: cover;
   background-position: center center;
+}
+.uw-module-body div.basic-module div.mobile-image {
+  visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: right bottom;
+  top: 0;
+  z-index: 0;
 }
 .uw-module-body div.basic-module .basic-mod-container {
   padding-top: 60px;
@@ -203,6 +238,9 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .uw-module-body div.basic-module div.mobile-image {
+    visibility: visible;
+  }
   .uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
   }
