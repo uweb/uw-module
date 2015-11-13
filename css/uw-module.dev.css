@@ -137,7 +137,7 @@
   padding-bottom: 20px;
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text p,
-.uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text h2 {
+.uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text h3 {
   color: #fff;
 }
 @media only screen and (max-width: 768px) {
@@ -206,9 +206,10 @@
 .uw-module-body div.basic-module[onclick] {
   cursor: pointer;
 }
-.uw-module-body div.basic-module[onclick]:hover .basic-mod-container div.mod-text h2,
-.uw-module-body div.basic-module[onclick]:focus .basic-mod-container div.mod-text h2 {
+.uw-module-body div.basic-module[onclick]:hover .basic-mod-container div.mod-text h3,
+.uw-module-body div.basic-module[onclick]:focus .basic-mod-container div.mod-text h3 {
   color: #b7a57a;
+  text-decoration: underline;
 }
 .uw-module-body div.thin-module {
   height: 150px;
@@ -222,7 +223,7 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-.uw-module-body div.thin-module div.mod-text h2 {
+.uw-module-body div.thin-module div.mod-text h3 {
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   font-size: 40px;
