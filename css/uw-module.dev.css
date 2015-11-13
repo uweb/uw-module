@@ -101,7 +101,7 @@
 @media only screen and (max-width: 768px) {
   .uw-module-body div.full-module div.container .full-module-blurb {
     margin-bottom: 100px;
-    width: 90%;
+    width: 95%;
   }
 }
 .uw-module-body div.full-module.mobile-overlay {
@@ -119,6 +119,9 @@
 @media only screen and (max-width: 768px) {
   .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
+  }
+  .uw-module-body div.full-module.mobile-overlay div.full-module-blurb {
+    width: 95%;
   }
 }
 .uw-module-body div.basic-module {
