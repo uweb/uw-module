@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 #module .inside div.module .mobile-image,
+#module .inside div.module .overlay-image,
 #module .inside div.module .image {
   float: left;
   width: 45%;
@@ -16,6 +17,7 @@
   cursor: pointer;
 }
 #module .inside div.module .mobile-image img,
+#module .inside div.module .overlay-image img,
 #module .inside div.module .image img {
   width: auto;
   max-width: 100%;
@@ -26,14 +28,17 @@
   cursor: pointer;
 }
 #module .inside div.module .mobile-image:before,
+#module .inside div.module .overlay-image:before,
 #module .inside div.module .image:before,
 #module .inside div.module .mobile-image:after,
+#module .inside div.module .overlay-image:after,
 #module .inside div.module .image:after {
   content: "";
   position: absolute;
   display: block;
 }
 #module .inside div.module .mobile-image:before,
+#module .inside div.module .overlay-image:before,
 #module .inside div.module .image:before {
   top: 40px;
   bottom: 4px;
@@ -46,6 +51,7 @@
   background-color: #4B2E83;
 }
 #module .inside div.module .mobile-image:after,
+#module .inside div.module .overlay-image:after,
 #module .inside div.module .image:after {
   top: 50px;
   background: url(../assets/edit.svg);
@@ -56,14 +62,17 @@
   transition: all linear .25s;
 }
 #module .inside div.module .mobile-image:hover:before,
+#module .inside div.module .overlay-image:hover:before,
 #module .inside div.module .image:hover:before {
   left: -140px;
 }
 #module .inside div.module .mobile-image:hover:after,
+#module .inside div.module .overlay-image:hover:after,
 #module .inside div.module .image:hover:after {
   opacity: 1;
 }
-#module .inside div.module .mobile-image img {
+#module .inside div.module .mobile-image img,
+#module .inside div.module .overlay-image img {
   width: auto;
   max-height: 300px;
 }

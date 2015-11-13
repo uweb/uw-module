@@ -199,12 +199,12 @@ class UW_Module
         break;
       case "full":
         $overlay = isset($module->overlay) ? 'mobile-overlay' : '';
-        return sprintf(self::MODULE_FULL, $module->id . ' ' . $overlay, $module->image, $module->image, $module->mobileimage, $module->location, $module->title, do_shortcode($module->text));
+        return sprintf(self::MODULE_FULL, $module->id . ' ' . $overlay, $module->image, $module->image, $module->overlayimage, $module->location, $module->title, do_shortcode($module->text));
         break;
       case "basic":
         $side = isset($module->side) ? $module->side : 'left';
         $overlay = isset($module->overlay) ? 'mobile-overlay' : '';
-        $return = sprintf(self::MODULE_BASIC, $module->id . ' ' . $overlay, $module->image, $module->mobileimage, $module->location, $side, $module->title, do_shortcode($module->text));
+        $return = sprintf(self::MODULE_BASIC, $module->id . ' ' . $overlay, $module->image, $module->overlayimage, $module->location, $side, $module->title, do_shortcode($module->text));
         if (!empty($module->link)){
           $return .= "<script> $('div.module-" . $module->id . "').attr('onclick','location.href=\'" . $module->link . "\''); $('div.module-" . $module->id . "').attr('tabIndex', '0');</script>";
         }

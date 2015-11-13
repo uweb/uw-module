@@ -11,6 +11,7 @@ ModularPages.Module = Backbone.Model.extend({
       template: 'white',
       image : '/wp-content/plugins/uw-module/assets/placeholder.png',
       mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png',
+      overlayimage : '/wp-content/plugins/uw-module/assets/placeholder-overlay.png',
       side : 'left',
       overlay : 'no',
       location : 'right:0; bottom:0;'
@@ -52,6 +53,7 @@ ModularPages.View = Backbone.View.extend({
   events : {
     'click .admin-module-image' : 'openMediaFrame',
     'click .admin-module-mobile-image' : 'openMobileMediaFrame',
+    'click .admin-module-overlay-image' : 'openOverlayMediaFrame',
     'click #add-new-module' : 'addNewmoduleBox',
     'click .remove-module'  : 'removemodule'
   },
@@ -101,6 +103,10 @@ ModularPages.View = Backbone.View.extend({
           '<image class="admin-module-image" src="<%= image %>" width="100%"/>' +
           '<input type="hidden" name="modules[<%= id %>][image]" value="<%= image %>"/>' +
         '</div>' +
+        '<div class="overlay-image">' +
+          '<image class="admin-module-overlay-image" src="<%= overlayimage %>" width="100%"/>' +
+          '<input type="hidden" name="modules[<%= id %>][overlayimage]" value="<%= overlayimage %>"/>' +
+        '</div>' +
         '<div class="mobile-image">' +
           '<image class="admin-module-mobile-image" src="<%= mobileimage %>" width="100%"/>' +
           '<input type="hidden" name="modules[<%= id %>][mobileimage]" value="<%= mobileimage %>"/>' +
@@ -108,7 +114,7 @@ ModularPages.View = Backbone.View.extend({
         '<div class="form">' +
           '<p>Title : <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" /></p>' +
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
-          '<p>Use Mobile Image as overlay? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
+          '<p>Use overlay image? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
           '<p>Location of overlay (Defaults to right:0; bottom:0;) : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
@@ -123,6 +129,10 @@ ModularPages.View = Backbone.View.extend({
           '<image class="admin-module-image" src="<%= image %>" width="100%"/>' +
           '<input type="hidden" name="modules[<%= id %>][image]" value="<%= image %>"/>' +
         '</div>' +
+        '<div class="overlay-image">' +
+          '<image class="admin-module-overlay-image" src="<%= overlayimage %>" width="100%"/>' +
+          '<input type="hidden" name="modules[<%= id %>][overlayimage]" value="<%= overlayimage %>"/>' +
+        '</div>' +
         '<div class="mobile-image">' +
           '<image class="admin-module-mobile-image" src="<%= mobileimage %>" width="100%"/>' +
           '<input type="hidden" name="modules[<%= id %>][mobileimage]" value="<%= mobileimage %>"/>' +
@@ -132,7 +142,7 @@ ModularPages.View = Backbone.View.extend({
           '<p>Text  : <br/><textarea type="text" name="modules[<%= id %>][text]" style="resize:none; width:100%;" ><%- text %></textarea></p>' +
           '<p>Link  (optional):<input type="text" name="modules[<%= id %>][link]" value="<%- link %>" /></p>' +
           '<p>Move text to the right side? <input type="checkbox" name="modules[<%= id %>][side]" value="right" style="width:auto" $s ><br/>' +
-          'Use Mobile Image as overlay? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
+          'Use overlay image? <input type="checkbox" name="modules[<%= id %>][overlay]" value="yes" style="width:auto" $t ></p>' +
           '<p>Location of overlay (Defaults to "right:0; bottom:0;") : <input type="text" name="modules[<%= id %>][location]" value="<%- location %>" /></p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
@@ -216,6 +226,7 @@ ModularPages.View = Backbone.View.extend({
   openMediaFrame : function( e )
   {
     this.mobile = false;
+    this.overlay = false;
     this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
     this.mediaframe.open()
   },
@@ -223,6 +234,15 @@ ModularPages.View = Backbone.View.extend({
   openMobileMediaFrame : function( e )
   {
     this.mobile = true;
+    this.overlay = false;
+    this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
+    this.mediaframe.open()
+  },
+
+  openOverlayMediaFrame : function( e )
+  {
+    this.mobile = false;
+    this.overlay = true;
     this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
     this.mediaframe.open()
   },
@@ -232,7 +252,9 @@ ModularPages.View = Backbone.View.extend({
     var media = this.mediaframe.state().get('selection').first().toJSON()
     if ( this.mobile )
      this.collection.get( this.id ).set( 'mobileimage', media.url )
-    else
+    else if ( this.overlay )
+     this.collection.get( this.id ).set( 'overlayimage', media.url )
+    else 
      this.collection.get( this.id ).set( 'image', media.url )
   },
 
