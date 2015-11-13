@@ -250,6 +250,7 @@
     font-size: 14px;
     line-height: 21px;
     margin-bottom: 20px;
+    margin-left: 0%;
   }
   .uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
