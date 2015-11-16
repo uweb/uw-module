@@ -170,14 +170,14 @@
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
   width: 70%;
-  background-color: rgba(51, 51, 51, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text {
   padding-bottom: 20px;
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text p,
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text h3 {
-  color: #fff;
+  color: #33006f;
 }
 @media only screen and (max-width: 768px) {
   .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
