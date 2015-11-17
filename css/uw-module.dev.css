@@ -144,7 +144,7 @@
   .uw-module-body div.full-module div.mobile-image {
     background-color: rgba(51, 0, 111, 0.8);
     visibility: visible;
-    background-image: none;
+    background-image: none !important;
   }
   .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
