@@ -132,6 +132,8 @@
 }
 .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
   visibility: visible !important;
+  min-height: 300px;
+  min-width: 1200px;
 }
 @media only screen and (max-width: 1024px) {
   .uw-module-body div.full-module.mobile-overlay div.full-module-blurb {
