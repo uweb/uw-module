@@ -142,7 +142,7 @@
 }
 @media only screen and (max-width: 768px) {
   .uw-module-body div.full-module div.mobile-image {
-    visibility: visible;
+    background-color: rgba(51, 0, 111, 0.8);
   }
   .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
