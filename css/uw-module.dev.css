@@ -307,6 +307,11 @@
   margin-left: auto;
   margin-bottom: 20px;
 }
+.uw-module-body div.give-module div.mod-give-wrapper .mod-give-container .giving-mod-how-to p {
+  margin-top: 40px;
+  margin-left: 25px;
+  font-size: 16px;
+}
 @media only screen and (min-width: 1200px) {
   .uw-module-body div.give-module {
     width: 1200px;
@@ -401,6 +406,9 @@
     font-weight: 800;
     color: #686868;
     text-transform: uppercase;
+  }
+  .uw-module-body div.give-module div.giving-mod-how-to p {
+    margin-top: 0 !important;
   }
   .uw-module-body div.give-module:before,
   .uw-module-body div.give-module:after {
