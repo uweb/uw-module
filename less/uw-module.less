@@ -179,11 +179,11 @@
 			padding-bottom: 20px;
 	  		div.mod-text-container {
 				width:70%;
-	    		background-color: rgba(255,255,255,.7);
+	    		background-color: rgba(51, 0, 111, 0.8);
 			    div.mod-text {
 			    	padding-bottom: 20px;
 			    	p , h3 {
-				    	color: rgb(51, 0, 111);
+				    	color: rgb(255, 255, 255);
 				    }
 			    }
 				@media only screen and (max-width : 768px){
@@ -245,14 +245,31 @@
 			div.mobile-image {
 		 		visibility: visible;
 		 	}
-			.basic-mod-container div.mod-text-container {
-				position: absolute;
-				div.mod-text p {
-					width: 100%;
-					padding-right: 0;
-				    font-size: 14px;
-				    line-height: 21px;
-				    margin-bottom: 20px;
+			.basic-mod-container {
+				padding-top: 0;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				padding-left: 0;
+				div.mod-text-container {
+					position: absolute;
+					transform: initial !important;
+					bottom: 0;
+					div.mod-text {
+						transform: initial !important;
+						margin-right: 0 !important;
+						margin-left: 0 !important;
+						padding: 0 10px 0 10px !important;
+						p {
+							width: 100%;
+							padding-right: 0;
+						    font-size: 14px;
+						    line-height: 21px;
+						    margin-bottom: 20px;
+						}
+						h3 {
+							margin-top: 14.5px;
+						}
+					}
 				}
 			}
 			&.mobile-overlay img.mobile-overlay{

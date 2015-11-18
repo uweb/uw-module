@@ -174,14 +174,14 @@
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
   width: 70%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(51, 0, 111, 0.8);
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text {
   padding-bottom: 20px;
 }
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text p,
 .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text h3 {
-  color: #33006f;
+  color: #ffffff;
 }
 @media only screen and (max-width: 768px) {
   .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
@@ -246,8 +246,22 @@
   .uw-module-body div.basic-module div.mobile-image {
     visibility: visible;
   }
+  .uw-module-body div.basic-module .basic-mod-container {
+    padding-top: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0;
+  }
   .uw-module-body div.basic-module .basic-mod-container div.mod-text-container {
     position: absolute;
+    transform: initial !important;
+    bottom: 0;
+  }
+  .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text {
+    transform: initial !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 0 10px 0 10px !important;
   }
   .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text p {
     width: 100%;
@@ -255,6 +269,9 @@
     font-size: 14px;
     line-height: 21px;
     margin-bottom: 20px;
+  }
+  .uw-module-body div.basic-module .basic-mod-container div.mod-text-container div.mod-text h3 {
+    margin-top: 14.5px;
   }
   .uw-module-body div.basic-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
