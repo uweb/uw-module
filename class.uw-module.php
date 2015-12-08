@@ -214,7 +214,10 @@ class UW_Module
         return sprintf(self::MODULE_THIN, $module->id, do_shortcode($module->text));
         break;
       case "give":
-        $gift = !empty($module->title) ? "source_typ=3&source=" . $module->title . "&" : "";
+        $gift = http_build_query($_GET) . "&";
+        if (!empty($module->title) && empty($gift)) {
+          $gift = "source_typ=3&source=" . $module->title . "&";
+        } 
         return sprintf(do_shortcode(self::MODULE_GIVE), $module->id, $gift);
         break;
     }
