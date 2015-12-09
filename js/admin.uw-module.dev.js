@@ -165,8 +165,8 @@ ModularPages.View = Backbone.View.extend({
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Giving </h1>' +
         '<div class="form">' +
-          '<p>Giving - Fund Code (optional): <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" />' +
-          '(for multiple codes, seperate with commas) </p>' +
+          '<p>Giving - Query Parameters (optional): <input type="text" name="modules[<%= id %>][title]" value="<%- title %>" />' +
+          //'(for multiple codes, seperate with commas) </p>' +
           '<input type="hidden" name="modules[<%= id %>][id]" value="<%= id %>"/>' +
           '<input type="hidden" name="modules[<%= id %>][template]" value="<%= template %>"/>' +
           '<a class="button-secondary remove-module"> Remove </a>' +
