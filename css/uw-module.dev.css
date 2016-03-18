@@ -57,6 +57,7 @@ body.page #uw-container #uw-container-inner .uw-module-body div.full-module {
   height: inherit !important;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 body.page #uw-container #uw-container-inner .uw-module-body div.full-module img.full-image-sizer {
   height: 0;
@@ -112,7 +113,6 @@ body.page #uw-container #uw-container-inner .uw-module-body div.full-module div.
 }
 body.page #uw-container #uw-container-inner .uw-module-body div.full-module div.container .full-module-blurb p {
   position: absolute;
-  height: 100%;
 }
 @media only screen and (max-width: 768px) {
   body.page #uw-container #uw-container-inner .uw-module-body div.full-module div.container .full-module-blurb {
