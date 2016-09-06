@@ -157,6 +157,7 @@ body.page #uw-container #uw-container-inner .uw-module-body div.basic-module {
   min-height: 450px;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 body.page #uw-container #uw-container-inner .uw-module-body div.basic-module div.mobile-image {
   visibility: hidden;
