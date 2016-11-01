@@ -1,3 +1,16 @@
+@media only screen and (max-width: 768px) {
+  body.page #uw-container #uw-container-inner .uw-module-body #mobile-relative.frontpage {
+    margin-top: 50px;
+    position: relative;
+  }
+  body.page #uw-container #uw-container-inner .uw-module-body #mobile-relative.frontpage button.uw-mobile-menu-toggle {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    margin: 0;
+    top: -40px;
+  }
+}
 body.page #uw-container #uw-container-inner .uw-module-body p {
   margin-bottom: 0;
 }

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: [ 'js/admin.uw-module.dev.js' ],
+        src:  'js/admin.uw-module.dev.js' ,
         dest: 'js/admin.uw-module.js'
       }
     },
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: [ 'gruntfile.js', '<%= concat.dist.src %>' ],
+      files: [ 'gruntfile.js', 'js/admin.uw-module.dev.js' ],
       options: {
         asi: true,
         smarttabs: true,

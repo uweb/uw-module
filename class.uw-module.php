@@ -153,6 +153,8 @@ class UW_Module
     wp_enqueue_style( 'module-styles' );
 
     return $modulereturn . '</div>' . '<script>' .
+      'var menu = $("#mobile-relative");' .
+      '$( "#main_content" ).prepend(menu);' .
       'var mods = $( "#main_content" ).html();' .
       '$( "div.uw-hero-image" ).remove();' . 
       '$( "div.uw-body" ).html(mods);' . 
