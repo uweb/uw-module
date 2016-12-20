@@ -218,7 +218,10 @@ class UW_Module
       case "give":
         $gift = '';
         $gift .= http_build_query($_GET) ? (http_build_query($_GET) . "&") : "";
-        $gift .= !empty($module->title) ? ($module->title . "&") : "";
+
+        $gift .= ( !empty($module->title) && ($gift == '') ) ? ($module->title . "&") : "";
+
+
         return sprintf(do_shortcode(self::MODULE_GIVE), $module->id, $gift);
         break;
     }
