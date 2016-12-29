@@ -217,9 +217,9 @@ class UW_Module
         break;
       case "give":
         $gift = '';
-        $gift .= http_build_query($_GET) ? (http_build_query($_GET) . "&") : "";
+        $gift .= http_build_query($_GET) ? http_build_query($_GET) : "";
 
-        $gift .= ( !empty($module->title) && ($gift == '') ) ? ($module->title . "&") : "";
+        $gift .= ( !empty($module->title) && ($gift == '') ) ? $module->title : "";
 
 
         return sprintf(do_shortcode(self::MODULE_GIVE), $module->id, $gift);
