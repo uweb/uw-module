@@ -198,29 +198,31 @@ ModularPages.View = Backbone.View.extend({
 
   addmoduleBox : function( module, index )
   {
-    console.log(module.attributes)
+    var template;
     switch ( module.attributes.template ){
       case "white":
-        this.$el.append( _.template( this.templatewhite, module.toJSON() ) );
+        template = _.template( this.templatewhite );
         break;
       case "full":
         var full = this.templatefull;
         full = (module.attributes.overlay == "yes") ? full.replace('$t' , "checked") : full.replace('$t' , "");
-        this.$el.append( _.template( full, module.toJSON() ) );
+        template = _.template( full );
         break;
       case "basic":
         var basic = this.templatebasic;
         basic = (module.attributes.side == "right") ? basic.replace('$s' , "checked") : basic.replace('$s' , "");
         basic = (module.attributes.overlay == "yes") ? basic.replace('$t' , "checked") : basic.replace('$t' , "");
-        this.$el.append( _.template( basic, module.toJSON() ) );
+        template = _.template( basic );
         break;
       case "thin":
-        this.$el.append( _.template( this.templatethin, module.toJSON() ) );
+        template = _.template( this.templatethin );
         break;
       case "give":
-        this.$el.append( _.template( this.templategive, module.toJSON() ) );
+        template = _.template( this.templategive );
         break;
     } 
+    template = template( module.toJSON() );
+    this.$el.append( template );
   },
 
   openMediaFrame : function( e )
