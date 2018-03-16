@@ -162,9 +162,18 @@ body.page #uw-container #uw-container-inner .uw-module-body{
 		@media only screen and (max-width : 768px){
 		 	
 		 	div.mobile-image {
-		 		background-color: rgba(51, 0, 111, 0.8);
+		 		//background-color: rgba(51, 0, 111, 0.8);
 		 		visibility: visible;
-		 		background-image: none !important;
+		 		//background-image: none !important;
+		 		&:after {
+		 			content:'';
+		 			position: absolute;
+		 			height: 100%;
+		 			width: 100%;
+		 			top: 0;
+		 			left: 0;
+		 			background-color: rgba(51, 0, 111, 0.8);
+		 		}
 		 	}
 		 	&.mobile-overlay{
 				img.mobile-overlay{

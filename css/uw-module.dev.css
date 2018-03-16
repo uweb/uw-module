@@ -158,9 +158,16 @@ body.page #uw-container #uw-container-inner .uw-module-body div.full-module.mobi
 }
 @media only screen and (max-width: 768px) {
   body.page #uw-container #uw-container-inner .uw-module-body div.full-module div.mobile-image {
-    background-color: rgba(51, 0, 111, 0.8);
     visibility: visible;
-    background-image: none !important;
+  }
+  body.page #uw-container #uw-container-inner .uw-module-body div.full-module div.mobile-image:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(51, 0, 111, 0.8);
   }
   body.page #uw-container #uw-container-inner .uw-module-body div.full-module.mobile-overlay img.mobile-overlay {
     visibility: hidden !important;
