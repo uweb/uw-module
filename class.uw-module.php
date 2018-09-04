@@ -2,7 +2,7 @@
 /**!
  * Plugin Name: UW Modules
  * Plugin URI: http://uw.edu/brand/web/
- * Description: Put a module template on your page. 
+ * Description: Put a module template on your page.
  * Version: 1.0
  * Author: UW Web Team
  */
@@ -82,7 +82,7 @@ class UW_Module
           <!-- <option value="thin">Thinstrip</option> -->
           <option value="give">Giving</option>
         </select>
-        <a id="add-new-module" class="button-primary" href="#">Add a New Module</a> 
+        <a id="add-new-module" class="button-primary" href="#">Add a New Module</a>
       </p>
 
     <?php
@@ -156,10 +156,10 @@ class UW_Module
       'var menu = $("#mobile-relative");' .
       '$( "#main_content" ).prepend(menu);' .
       'var mods = $( "#main_content" ).html();' .
-      '$( "div.uw-hero-image" ).remove();' . 
-      '$( "div.uw-body" ).html(mods);' . 
+      '$( "div.uw-hero-image" ).remove();' .
+      '$( "div.uw-body" ).html(mods);' .
       '$( "div.uw-body" ).addClass("uw-module-body").removeClass("uw-body container");' .
-    '</script>'; 
+    '</script>';
   }
 
   function get_current_uw_module()
@@ -174,7 +174,7 @@ class UW_Module
       $module[] = $mod;
     }
 
-    wp_die( json_encode( $module ) );
+    wp_die( json_encode( $modules ) );
 
   }
 
