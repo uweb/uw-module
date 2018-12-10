@@ -9,9 +9,9 @@ ModularPages.Module = Backbone.Model.extend({
       link  : null,
       dark : null,
       template: 'white',
-      image : '/wp-content/plugins/uw-module/assets/placeholder.png',
-      mobileimage : '/wp-content/plugins/uw-module/assets/placeholder-mobile.png',
-      overlayimage : '/wp-content/plugins/uw-module/assets/placeholder-overlay.png',
+      image : '../wp-content/plugins/uw-module/assets/placeholder.png',
+      mobileimage : '../wp-content/plugins/uw-module/assets/placeholder-mobile.png',
+      overlayimage : '../wp-content/plugins/uw-module/assets/placeholder-overlay.png',
       side : 'left',
       overlay : 'no',
       location : 'right:0; bottom:0;'
@@ -65,7 +65,7 @@ ModularPages.View = Backbone.View.extend({
   },
 
 
-  template : //edit the module types here -> multiple templates? 
+  template : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<div class="image">' +
           '<image class="admin-module-image" src="<%= image %>" width="100%"/>' +
@@ -85,7 +85,7 @@ ModularPages.View = Backbone.View.extend({
         '</div>' +
       '</div>',
 
-  templatewhite : //edit the module types here -> multiple templates? 
+  templatewhite : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Basic white </h1>' +
         '<div class="form">' +
@@ -96,7 +96,7 @@ ModularPages.View = Backbone.View.extend({
         '</div>' +
       '</div>',
 
-  templatefull : //edit the module types here -> multiple templates? 
+  templatefull : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Full-page image </h1>' +
         '<div class="image">' +
@@ -122,7 +122,7 @@ ModularPages.View = Backbone.View.extend({
         '</div>' +
       '</div>',
 
-  templatebasic : //edit the module types here -> multiple templates? 
+  templatebasic : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Basic image </h1>' +
         '<div class="image">' +
@@ -150,7 +150,7 @@ ModularPages.View = Backbone.View.extend({
         '</div>' +
       '</div>',
 
-  templatethin : //edit the module types here -> multiple templates? 
+  templatethin : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Thinstrip </h1>' +
         '<div class="form">' +
@@ -161,7 +161,7 @@ ModularPages.View = Backbone.View.extend({
         '</div>' +
       '</div>',
 
-  templategive : //edit the module types here -> multiple templates? 
+  templategive : //edit the module types here -> multiple templates?
       '<div class="module" data-template="<%= template %>" data-index="<%= id %>">' +
         '<h1 style="color:rgb(51,0,111);"> Giving </h1>' +
         '<div class="form">' +
@@ -220,7 +220,7 @@ ModularPages.View = Backbone.View.extend({
       case "give":
         template = _.template( this.templategive );
         break;
-    } 
+    }
     template = template( module.toJSON() );
     this.$el.append( template );
   },
@@ -256,7 +256,7 @@ ModularPages.View = Backbone.View.extend({
      this.collection.get( this.id ).set( 'mobileimage', media.url )
     else if ( this.overlay )
      this.collection.get( this.id ).set( 'overlayimage', media.url )
-    else 
+    else
      this.collection.get( this.id ).set( 'image', media.url )
   },
 

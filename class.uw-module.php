@@ -169,12 +169,14 @@ class UW_Module
 
     $modules = $modules ? $modules : array();
 
+    $module = array();
+
     foreach ($modules as $mod )
     {
       $module[] = $mod;
     }
 
-    wp_die( json_encode( $modules ) );
+    wp_die( json_encode( $module ) );
 
   }
 
