@@ -227,6 +227,7 @@ ModularPages.View = Backbone.View.extend({
 
   openMediaFrame : function( e )
   {
+    event.preventDefault();
     this.mobile = false;
     this.overlay = false;
     this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
@@ -235,6 +236,7 @@ ModularPages.View = Backbone.View.extend({
 
   openMobileMediaFrame : function( e )
   {
+    event.preventDefault();
     this.mobile = true;
     this.overlay = false;
     this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
@@ -243,6 +245,7 @@ ModularPages.View = Backbone.View.extend({
 
   openOverlayMediaFrame : function( e )
   {
+    event.preventDefault();
     this.mobile = false;
     this.overlay = true;
     this.id = this.$( e.currentTarget ).closest('[data-index]').data().index
@@ -262,6 +265,7 @@ ModularPages.View = Backbone.View.extend({
 
   addNewmoduleBox : function( e )
   {
+    event.preventDefault();
     var $temp = this.$( "#mod-select option:selected" ).val()
     this.collection.push( new ModularPages.Module({ id: _.uniqueId() , template: $temp }) )
   },
